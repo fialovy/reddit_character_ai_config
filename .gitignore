@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.swp
+*.swo
 .Python
 build/
 develop-eggs/

@@ -16,6 +16,10 @@ It's still up to you to set up the basics like your character's name, avatar, an
 will hopefully help you provide a lot more training data under "More options."
 
 
+![Basics](images/pavel.png)
+
+
+
 This is also [fialovy's](https://github.com/fialovy) first personal "vibe coding" (via Github Copilot agent) project as they say,
 so caveat emptor. I'm sure we won't be writing disclaimers like this in 5 or even 2 years (and I promise I wrote
 _this_ part myself), but I figured it was worth noting... "bAcK in myyy day"....etc.
