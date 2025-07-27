@@ -1,10 +1,25 @@
 # Reddit Character.AI Config Generator
 
-This tool generates
-[Character.AI character definitions](https://book.character.ai/character-book/character-attributes/definition) 
-based on a Reddit user's
-public posts and comments. It was written for [fialovy](https://github.com/fialovy)
-primarily via the Github Copilot in agent mode.
+[character.ai](https://character.ai/) is a fun platform that lets you create, configure, and talk to your own AI characters. You can set up
+a character with just a name, tagline, and brief description of their personality. But it's even more fun and powerful to create an advanced
+**[character definition](https://book.character.ai/character-book/character-attributes/definition)** with some sample conversations!
+
+
+**What if you could make any Redditor (e.g., yourself) into a character?**
+
+This tool can help you do just that by pulling the public comments and replies of the user of your choice and formatting them into
+sample conversations. More specifically, it formats the target Reddit user's comments into the things said by `{{char}}`.
+The users who created the posts and/or comments that the target user responded to will be formatted as separate
+`{{random_user_1}}`, `{{random_user_2}}`, etc.
+
+It's still up to you to set up the basics like your character's name, avatar, and initial description, but this script
+will hopefully help you provide a lot more training data under "More options."
+
+
+This is also [fialovy's](https://github.com/fialovy) first personal "vibe coding" (via Github Copilot agent) project as they say,
+so caveat emptor. I'm sure we won't be writing disclaimers like this in 5 or even 2 years (and I promise I wrote
+_this_ part myself), but I figured it was worth noting... "bAcK in myyy day"....etc.
+
 
 
 ## Setup
@@ -26,6 +41,7 @@ primarily via the Github Copilot in agent mode.
    ```
 
 3. **Run?!**
+
 `uv run` will handle dependencies automatically, hopefully.
 
 The tool will automatically look for `praw.ini` in these locations (in order):
@@ -33,32 +49,26 @@ The tool will automatically look for `praw.ini` in these locations (in order):
 - `~/.praw.ini` (PRAW default)
 - `~/reddit_credentials/praw.ini` (alternative)
 
-It intentionally does NOT look in the project directory; please do not
-get into the habit of storing credentials files like that! D:
+It intentionally does NOT look in the project directory (see, I promise I reviewed and adjusted after the agent originally tried to do this as a fallback);
+please do not get into the habit of storing credentials files like that! 
 
 ## Usage
 
 ### Command Line (Recommended)
 ```bash
-uv run characteraiconfig <reddit_username_of_interest>
+uv run reddit_character_ai_config.py <reddit_username_of_interest>
 ```
 
 ### Examples
 ```bash
 # Basic usage
-uv run characteraiconfig someuser
+uv run reddit_character_ai_config.py someuser
 
-# With more comments and save to file
-uv run characteraiconfig someuser --limit 200 --output character_def.txt
+# With more comments and save to file for easy pasting into character.ai's "Definition" field under "More options"
+uv run reddit_character_ai_config.py someuser --limit 200 --output character_def.txt
 
 # Verbose mode to see what's happening
-uv run characteraiconfig someuser --verbose
+uv run reddit_character_ai_config.py someuser --verbose
 ```
 
-
-### What is it actually doing?:
-- Fetch the user's recent comments and the posts/comments they were replying to
-- Format them as Character.AI dialog examples, where the target user's comments are `{{char}}` responses. In other word, this user is 'the character.' The users who created the posts and/or comments that the target user responded to will be formatted as separate `{{random_user_1}}`, `{{random_user_2}}`, etc.
-- Generate a character definition (max 32,000 characters)
-- Output the formatted definition ready for Character.AI
 
