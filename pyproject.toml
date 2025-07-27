@@ -1,0 +1,13 @@
+[project]
+name = "reddit-character-ai-config"
+version = "0.1.0"
+description = "Generate Character.AI character definitions from Reddit user data"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "praw>=7.7.0",
+    "click>=8.0.0",
+]
+
+[project.scripts]
+characteraiconfig = "reddit_character_ai_config:main"

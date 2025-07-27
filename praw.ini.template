@@ -1,0 +1,6 @@
+[DEFAULT]
+# Reddit API credentials
+# Get these from https://www.reddit.com/prefs/apps/
+client_id=YOUR_CLIENT_ID_HERE
+client_secret=YOUR_CLIENT_SECRET_HERE
+user_agent=reddit_character_ai_config/0.1.0 by /u/YOUR_USERNAME_HERE
