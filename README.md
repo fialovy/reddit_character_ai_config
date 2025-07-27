@@ -64,7 +64,7 @@ uv run reddit_character_ai_config.py <reddit_username_of_interest>
 # Basic usage
 uv run reddit_character_ai_config.py someuser
 
-# With more comments and save to file for easy pasting into character.ai's "Definition" field under "More options"
+# Use up to 200 comments rather than the default 100 and save to file for easy pasting into character.ai's "Definition" field under "More options"
 uv run reddit_character_ai_config.py someuser --limit 200 --output character_def.txt
 
 # Verbose mode to see what's happening
