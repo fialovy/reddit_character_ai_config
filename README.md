@@ -37,7 +37,8 @@ _this_ part myself), but I figured it was worth noting... "bAcK in myyy day"....
    # Create config directory
    mkdir -p ~/.config
    
-   # Copy and edit the template
+   # Copy and edit the template - note that we specifically look for
+   # a [reddit_chracter_ai_config] section and not [DEFAULT]
    cp praw.ini.template ~/.config/praw.ini
    
    # Edit with your credentials
